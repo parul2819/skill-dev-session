@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, Response, status
 from sqlalchemy.orm import Session
-
+from typing import Any
 from app.core.db.get_db import get_db
 from app.dto.restaurant_dto import RestaurantCreate, RestaurantRead, RestaurantUpdate
 from app.repositories.restaurant_repository import RestaurantRepository
@@ -9,13 +9,13 @@ from app.services.restaurant_service import RestaurantService
 router = APIRouter(prefix="/restaurants", tags=["Restaurants"])
 
 
-def get_restaurant_service(db: Session = Depends(get_db)) -> RestaurantService:
+def get_restaurant_service(db: Session = Depends(get_db)) -> Any:
     repo = RestaurantRepository(db)
     return RestaurantService(repo)
 
 
 @router.get("/", response_model=list[RestaurantRead])
-def list_restaurants(service: RestaurantService = Depends(get_restaurant_service)) -> list[RestaurantRead]:
+def list_restaurants(service: RestaurantService = Depends(get_restaurant_service)) -> Any:
     return service.list_restaurants()
 
 
@@ -23,7 +23,7 @@ def list_restaurants(service: RestaurantService = Depends(get_restaurant_service
 def get_restaurant(
     restaurant_id: int,
     service: RestaurantService = Depends(get_restaurant_service),
-) -> RestaurantRead:
+) -> Any:
     return service.get_restaurant(restaurant_id)
 
 
@@ -31,7 +31,7 @@ def get_restaurant(
 def create_restaurant(
     payload: RestaurantCreate,
     service: RestaurantService = Depends(get_restaurant_service),
-) -> RestaurantRead:
+) -> Any:
     return service.create_restaurant(payload)
 
 
@@ -40,7 +40,7 @@ def update_restaurant(
     restaurant_id: int,
     payload: RestaurantUpdate,
     service: RestaurantService = Depends(get_restaurant_service),
-) -> RestaurantRead:
+) -> Any:
     return service.update_restaurant(restaurant_id, payload)
 
 
@@ -48,6 +48,6 @@ def update_restaurant(
 def delete_restaurant(
     restaurant_id: int,
     service: RestaurantService = Depends(get_restaurant_service),
-) -> Response:
+) -> Any:
     service.delete_restaurant(restaurant_id)
     return Response(status_code=status.HTTP_204_NO_CONTENT)

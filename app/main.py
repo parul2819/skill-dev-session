@@ -13,26 +13,26 @@ from app.core.db.base import Base
 from app.core.db.session import engine
 import app.orm  # noqa: F401  # ensure all models are imported
 
-app = FastAPI(title="Food Delivery API")
+delivery_app = FastAPI(title="Food Delivery API")
 
 
-@app.on_event("startup")
+@delivery_app.on_event("startup")
 def on_startup() -> None:
     Base.metadata.create_all(bind=engine)
 
 
-app.include_router(user_router)
-app.include_router(restaurant_controller)
-app.include_router(menu_items_controller)
-app.include_router(offers_controller)
-app.include_router(cart_controller)
-app.include_router(cart_items_controller)
-app.include_router(orders_controller)
-app.include_router(order_items_controller)
-app.include_router(order_ratings_controller)
-app.include_router(user_addresses_controller)
+delivery_app.include_router(user_router)
+delivery_app.include_router(restaurant_controller)
+delivery_app.include_router(menu_items_controller)
+delivery_app.include_router(offers_controller)
+delivery_app.include_router(cart_controller)
+delivery_app.include_router(cart_items_controller)
+delivery_app.include_router(orders_controller)
+delivery_app.include_router(order_items_controller)
+delivery_app.include_router(order_ratings_controller)
+delivery_app.include_router(user_addresses_controller)
 
 
-@app.get("/health")
+@delivery_app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}

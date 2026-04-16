@@ -1,6 +1,7 @@
 [project]
 name = "skill-dev-sessions"
 version = "0.1.0"
+package-mode = false
 description = ""
 authors = [
     {name = "Parul Chutani",email = "parul.chutani@thepsi.com"}
@@ -12,7 +13,8 @@ dependencies = [
     "psycopg2-binary (>=2.9.11,<3.0.0)",
     "sqlalchemy (>=2.0.49,<3.0.0)",
     "alembic (>=1.18.4,<2.0.0)",
-    "python-dotenv (>=1.2.2,<2.0.0)"
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "pydantic-settings (>=2.13.1,<3.0.0)"
 ]
 
 

@@ -16,11 +16,11 @@ class Settings(BaseSettings):
     """
 
     DB_DRIVER: str = "postgresql+asyncpg"
-    DB_USER: str
-    DB_PASSWORD: str
+    DB_USER: str = ""
+    DB_PASSWORD: str = ""
     DB_HOST: str = "localhost"
     DB_PORT: int = 5432
-    DB_NAME: str
+    DB_NAME: str = ""
     DB_POOL_SIZE: int = 10
     DB_MAX_OVERFLOW: int = 20
     DB_ECHO: bool = False
