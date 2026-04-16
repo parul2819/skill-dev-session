@@ -7,7 +7,7 @@ from app.core.db.base import Base
 
 class Restaurant(Base):
     __tablename__ = "restaurants"
-    
+
     restaurant_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(150), nullable=False)
     address: Mapped[str | None] = mapped_column(Text, nullable=True)

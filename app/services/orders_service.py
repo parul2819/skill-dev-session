@@ -3,6 +3,7 @@ from app.dto.orders_dto import OrderCreate, OrderUpdate
 from app.orm.orders import Order
 from app.repositories.orders_repository import OrderRepository
 
+
 class OrderService:
     def __init__(self, repo: OrderRepository) -> None:
         self.repo = repo

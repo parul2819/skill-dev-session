@@ -2,6 +2,7 @@ from sqlalchemy import select, update
 from sqlalchemy.orm import Session
 from app.orm.user_addresses import UserAddress
 
+
 class UserAddressRepository:
     def __init__(self, db: Session) -> None:
         self.db = db

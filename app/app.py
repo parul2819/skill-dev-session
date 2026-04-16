@@ -13,7 +13,6 @@ from app.core.db.base import Base
 from app.core.db.session import engine
 import app.orm  # noqa: F401  # ensure all models are imported
 
-
 app = FastAPI(title="Food Delivery API")
 
 

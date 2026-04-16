@@ -2,6 +2,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.orm.order_ratings import OrderRating
 
+
 class OrderRatingRepository:
     def __init__(self, db: Session) -> None:
         self.db = db

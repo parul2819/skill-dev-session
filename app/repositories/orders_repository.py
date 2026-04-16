@@ -2,6 +2,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 from app.orm.orders import Order
 
+
 class OrderRepository:
     def __init__(self, db: Session) -> None:
         self.db = db

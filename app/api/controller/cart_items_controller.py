@@ -25,7 +25,9 @@ def get_cart_item(item_id: int, service: CartItemService = Depends(get_cart_item
 
 
 @router.post("/", response_model=CartItemRead, status_code=status.HTTP_201_CREATED)
-def create_cart_item(payload: CartItemCreate, service: CartItemService = Depends(get_cart_item_service)) -> CartItemRead:
+def create_cart_item(
+    payload: CartItemCreate, service: CartItemService = Depends(get_cart_item_service)
+) -> CartItemRead:
     return service.create_cart_item(payload)
 
 

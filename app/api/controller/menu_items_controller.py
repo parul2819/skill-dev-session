@@ -25,7 +25,9 @@ def get_menu_item(item_id: int, service: MenuItemService = Depends(get_menu_item
 
 
 @router.post("/", response_model=MenuItemRead, status_code=status.HTTP_201_CREATED)
-def create_menu_item(payload: MenuItemCreate, service: MenuItemService = Depends(get_menu_item_service)) -> MenuItemRead:
+def create_menu_item(
+    payload: MenuItemCreate, service: MenuItemService = Depends(get_menu_item_service)
+) -> MenuItemRead:
     return service.create_menu_item(payload)
 
 

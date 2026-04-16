@@ -1,6 +1,7 @@
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
 
+
 class OrderRatingCreate(BaseModel):
     order_id: int
     user_id: int
@@ -8,9 +9,11 @@ class OrderRatingCreate(BaseModel):
     rating: int | None = Field(default=None, ge=1, le=5)
     review: str | None = None
 
+
 class OrderRatingUpdate(BaseModel):
     rating: int | None = Field(default=None, ge=1, le=5)
     review: str | None = None
+
 
 class OrderRatingRead(BaseModel):
     model_config = ConfigDict(from_attributes=True)

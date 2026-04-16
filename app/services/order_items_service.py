@@ -3,6 +3,7 @@ from app.dto.order_items_dto import OrderItemCreate, OrderItemUpdate
 from app.orm.order_items import OrderItem
 from app.repositories.order_items_repository import OrderItemRepository
 
+
 class OrderItemService:
     def __init__(self, repo: OrderItemRepository) -> None:
         self.repo = repo

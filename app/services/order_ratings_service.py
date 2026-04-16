@@ -3,6 +3,7 @@ from app.dto.order_ratings_dto import OrderRatingCreate, OrderRatingUpdate
 from app.orm.order_ratings import OrderRating
 from app.repositories.order_ratings_repository import OrderRatingRepository
 
+
 class OrderRatingService:
     def __init__(self, repo: OrderRatingRepository) -> None:
         self.repo = repo
@@ -20,10 +21,7 @@ class OrderRatingService:
         # Check if rating already exists for the order
         existing = self.repo.get_by_order_id(payload.order_id)
         if existing:
-            raise HTTPException(
-                status_code=status.HTTP_409_CONFLICT, 
-                detail="Rating already exists for this order"
-            )
+            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Rating already exists for this order")
 
         order_rating = OrderRating(
             order_id=payload.order_id,

@@ -3,6 +3,7 @@ from app.dto.user_addresses_dto import UserAddressCreate, UserAddressUpdate
 from app.orm.user_addresses import UserAddress
 from app.repositories.user_addresses_repository import UserAddressRepository
 
+
 class UserAddressService:
     def __init__(self, repo: UserAddressRepository) -> None:
         self.repo = repo
@@ -29,22 +30,22 @@ class UserAddressService:
             city=payload.city,
             state=payload.state,
             pincode=payload.pincode,
-            is_default=payload.is_default
+            is_default=payload.is_default,
         )
         return self.repo.create(user_address)
 
     def update_address(self, address_id: int, payload: UserAddressUpdate) -> UserAddress:
         address = self.get_address(address_id)
-        
+
         update_data = payload.model_dump(exclude_unset=True)
-        
+
         if update_data.get("is_default"):
             user_id = update_data.get("user_id") or address.user_id
             self.repo.reset_default_for_user(user_id)
 
         for key, value in update_data.items():
             setattr(address, key, value)
-            
+
         return self.repo.update(address)
 
     def delete_address(self, address_id: int) -> None:
