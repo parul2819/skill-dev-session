@@ -48,6 +48,6 @@ def update_restaurant(
 def delete_restaurant(
     restaurant_id: int,
     service: RestaurantService = Depends(get_restaurant_service),
-) -> Any:
+) -> None:
     service.delete_restaurant(restaurant_id)
-    return Response(status_code=status.HTTP_204_NO_CONTENT)
+    # return Response(status_code=status.HTTP_204_NO_CONTENT)

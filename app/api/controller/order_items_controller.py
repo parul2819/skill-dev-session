@@ -42,5 +42,5 @@ def update_order_item(
 
 
 @router.delete("/{order_item_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_order_item(order_item_id: int, service: OrderItemService = Depends(get_order_item_service)) -> Any:
+def delete_order_item(order_item_id: int, service: OrderItemService = Depends(get_order_item_service)) -> None:
     service.delete_order_item(order_item_id)

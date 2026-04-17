@@ -42,5 +42,5 @@ def update_address(
 
 
 @router.delete("/{address_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_address(address_id: int, service: UserAddressService = Depends(get_user_address_service)) -> Any:
+def delete_address(address_id: int, service: UserAddressService = Depends(get_user_address_service)) -> None:
     service.delete_address(address_id)

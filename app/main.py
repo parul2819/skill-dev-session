@@ -18,7 +18,8 @@ delivery_app = FastAPI(title="Food Delivery API")
 
 @delivery_app.on_event("startup")
 def on_startup() -> None:
-    Base.metadata.create_all(bind=engine)
+    # Base.metadata.create_all(bind=engine)
+    pass
 
 
 delivery_app.include_router(user_router)

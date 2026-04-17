@@ -39,6 +39,6 @@ def update_menu_item(
 
 
 @router.delete("/{item_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_menu_item(item_id: int, service: MenuItemService = Depends(get_menu_item_service)) -> Any:
+def delete_menu_item(item_id: int, service: MenuItemService = Depends(get_menu_item_service)) -> None:
     service.delete_menu_item(item_id)
-    return Response(status_code=status.HTTP_204_NO_CONTENT)
+    # return Response(status_code=status.HTTP_204_NO_CONTENT)

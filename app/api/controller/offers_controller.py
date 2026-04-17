@@ -39,6 +39,6 @@ def update_offer(
 
 
 @router.delete("/{offer_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_offer(offer_id: int, service: OfferService = Depends(get_offer_service)) -> Any:
+def delete_offer(offer_id: int, service: OfferService = Depends(get_offer_service)) -> None:
     service.delete_offer(offer_id)
-    return Response(status_code=status.HTTP_204_NO_CONTENT)
+    # return Response(status_code=status.HTTP_204_NO_CONTENT)

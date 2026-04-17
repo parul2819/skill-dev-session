@@ -39,6 +39,6 @@ def update_cart(
 
 
 @router.delete("/{cart_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_cart(cart_id: int, service: CartService = Depends(get_cart_service)) -> Any:
+def delete_cart(cart_id: int, service: CartService = Depends(get_cart_service)) -> None:
     service.delete_cart(cart_id)
-    return Response(status_code=status.HTTP_204_NO_CONTENT)
+    # return Response(status_code=status.HTTP_204_NO_CONTENT)

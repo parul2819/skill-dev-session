@@ -37,5 +37,5 @@ def update_rating(
 
 
 @router.delete("/{rating_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_rating(rating_id: int, service: OrderRatingService = Depends(get_order_rating_service)) -> Any:
+def delete_rating(rating_id: int, service: OrderRatingService = Depends(get_order_rating_service)) -> None:
     service.delete_rating(rating_id)

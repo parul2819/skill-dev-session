@@ -39,6 +39,6 @@ def update_user(
 
 
 @router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_user(user_id: int, service: UserService = Depends(get_user_service)) -> Any:
+def delete_user(user_id: int, service: UserService = Depends(get_user_service)) -> None:
     service.delete_user(user_id)
-    return Response(status_code=status.HTTP_204_NO_CONTENT)
+    # return Response(status_code=status.HTTP_204_NO_CONTENT)

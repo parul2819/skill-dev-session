@@ -35,5 +35,5 @@ def update_order(order_id: int, payload: OrderUpdate, service: OrderService = De
 
 
 @router.delete("/{order_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_order(order_id: int, service: OrderService = Depends(get_order_service)) -> Any:
+def delete_order(order_id: int, service: OrderService = Depends(get_order_service)) -> None:
     service.delete_order(order_id)
