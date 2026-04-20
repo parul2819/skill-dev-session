@@ -1,44 +1,47 @@
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.orm.offers import Offer
+from app.orm import OfferOrm
 
 
 class OfferRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[Offer]:
-        stmt = select(Offer).where(Offer.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[OfferOrm]:
+        stmt = select(OfferOrm).where(OfferOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, offer_id: int) -> Offer | None:
-        stmt = select(Offer).where(
-            Offer.offer_id == offer_id,
-            Offer.is_deleted.is_(False),
+    async def get_by_id(self, offer_id: int) -> OfferOrm | None:
+        stmt = select(OfferOrm).where(
+            OfferOrm.offer_id == offer_id,
+            OfferOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def get_by_code(self, code: str) -> Offer | None:
-        stmt = select(Offer).where(
-            Offer.code == code,
-            Offer.is_deleted.is_(False),
+    async def get_by_code(self, code: str) -> OfferOrm | None:
+        stmt = select(OfferOrm).where(
+            OfferOrm.code == code,
+            OfferOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def create(self, offer: Offer) -> Offer:
+    async def create(self, offer: OfferOrm) -> OfferOrm:
         self.db.add(offer)
-        self.db.commit()
-        self.db.refresh(offer)
+        await self.db.commit()
+        await self.db.refresh(offer)
         return offer
 
-    def update(self, offer: Offer) -> Offer:
+    async def update(self, offer: OfferOrm) -> OfferOrm:
         self.db.add(offer)
-        self.db.commit()
-        self.db.refresh(offer)
+        await self.db.commit()
+        await self.db.refresh(offer)
         return offer
 
-    def soft_delete(self, offer: Offer) -> None:
+    async def soft_delete(self, offer: OfferOrm) -> None:
         offer.is_deleted = True
         self.db.add(offer)
-        self.db.commit()
+        await self.db.commit()

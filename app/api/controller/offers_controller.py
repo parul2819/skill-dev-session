@@ -1,44 +1,44 @@
-from fastapi import APIRouter, Depends, Response, status
-from sqlalchemy.orm import Session
+from fastapi import APIRouter, Depends, status
+from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Any
 from app.core.db.get_db import get_db
-from app.dto.offers_dto import OfferCreate, OfferRead, OfferUpdate
-from app.repositories.offers_repository import OfferRepository
-from app.services.offers_service import OfferService
+from app.dto import OfferCreate, OfferRead, OfferUpdate
+from app.repositories import OfferRepository
+from app.services import OfferService
 
 router = APIRouter(prefix="/offers", tags=["Offers"])
 
 
-def get_offer_service(db: Session = Depends(get_db)) -> Any:
+async def get_offer_service(db: AsyncSession = Depends(get_db)) -> Any:
     repo = OfferRepository(db)
     return OfferService(repo)
 
 
 @router.get("/", response_model=list[OfferRead])
-def list_offers(service: OfferService = Depends(get_offer_service)) -> Any:
-    return service.list_offers()
+async def list_offers(service: OfferService = Depends(get_offer_service)) -> Any:
+    return await service.list_offers()
 
 
 @router.get("/{offer_id}", response_model=OfferRead)
-def get_offer(offer_id: int, service: OfferService = Depends(get_offer_service)) -> Any:
-    return service.get_offer(offer_id)
+async def get_offer(offer_id: int, service: OfferService = Depends(get_offer_service)) -> Any:
+    return await service.get_offer(offer_id)
 
 
 @router.post("/", response_model=OfferRead, status_code=status.HTTP_201_CREATED)
-def create_offer(payload: OfferCreate, service: OfferService = Depends(get_offer_service)) -> Any:
-    return service.create_offer(payload)
+async def create_offer(payload: OfferCreate, service: OfferService = Depends(get_offer_service)) -> Any:
+    return await service.create_offer(payload)
 
 
 @router.put("/{offer_id}", response_model=OfferRead)
-def update_offer(
+async def update_offer(
     offer_id: int,
     payload: OfferUpdate,
     service: OfferService = Depends(get_offer_service),
 ) -> Any:
-    return service.update_offer(offer_id, payload)
+    return await service.update_offer(offer_id, payload)
 
 
 @router.delete("/{offer_id}", status_code=status.HTTP_204_NO_CONTENT)
-def delete_offer(offer_id: int, service: OfferService = Depends(get_offer_service)) -> None:
-    service.delete_offer(offer_id)
+async def delete_offer(offer_id: int, service: OfferService = Depends(get_offer_service)) -> None:
+    await service.delete_offer(offer_id)
     # return Response(status_code=status.HTTP_204_NO_CONTENT)

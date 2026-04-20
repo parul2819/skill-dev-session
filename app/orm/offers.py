@@ -5,7 +5,7 @@ from app.common.enums import DiscountTypeEnum
 from app.core.db.base import Base
 
 
-class Offer(Base):
+class OfferOrm(Base):
     __tablename__ = "offers"
 
     offer_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

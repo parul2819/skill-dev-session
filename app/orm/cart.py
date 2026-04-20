@@ -4,7 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.core.db.base import Base
 
 
-class Cart(Base):
+class CartOrm(Base):
     __tablename__ = "cart"
     __table_args__ = (UniqueConstraint("user_id", name="cart_user_id_key"),)
 

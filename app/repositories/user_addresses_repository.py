@@ -1,52 +1,55 @@
 from sqlalchemy import select, update
-from sqlalchemy.orm import Session
-from app.orm.user_addresses import UserAddress
+from sqlalchemy.ext.asyncio import AsyncSession
+from app.orm import UserAddressOrm
 
 
 class UserAddressRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[UserAddress]:
-        stmt = select(UserAddress).where(UserAddress.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[UserAddressOrm]:
+        stmt = select(UserAddressOrm).where(UserAddressOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, address_id: int) -> UserAddress | None:
-        stmt = select(UserAddress).where(
-            UserAddress.address_id == address_id,
-            UserAddress.is_deleted.is_(False),
+    async def get_by_id(self, address_id: int) -> UserAddressOrm | None:
+        stmt = select(UserAddressOrm).where(
+            UserAddressOrm.address_id == address_id,
+            UserAddressOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def get_by_user_id(self, user_id: int) -> list[UserAddress]:
-        stmt = select(UserAddress).where(
-            UserAddress.user_id == user_id,
-            UserAddress.is_deleted.is_(False),
+    async def get_by_user_id(self, user_id: int) -> list[UserAddressOrm]:
+        stmt = select(UserAddressOrm).where(
+            UserAddressOrm.user_id == user_id,
+            UserAddressOrm.is_deleted.is_(False),
         )
-        return list(self.db.scalars(stmt).all())
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def reset_default_for_user(self, user_id: int) -> None:
+    async def reset_default_for_user(self, user_id: int) -> None:
         stmt = (
-            update(UserAddress)
-            .where(UserAddress.user_id == user_id, UserAddress.is_default.is_(True))
+            update(UserAddressOrm)
+            .where(UserAddressOrm.user_id == user_id, UserAddressOrm.is_default.is_(True))
             .values(is_default=False)
         )
-        self.db.execute(stmt)
-        self.db.commit()
+        await self.db.execute(stmt)
+        await self.db.commit()
 
-    def create(self, user_address: UserAddress) -> UserAddress:
+    async def create(self, user_address: UserAddressOrm) -> UserAddressOrm:
         self.db.add(user_address)
-        self.db.commit()
-        self.db.refresh(user_address)
+        await self.db.commit()
+        await self.db.refresh(user_address)
         return user_address
 
-    def update(self, user_address: UserAddress) -> UserAddress:
+    async def update(self, user_address: UserAddressOrm) -> UserAddressOrm:
         self.db.add(user_address)
-        self.db.commit()
-        self.db.refresh(user_address)
+        await self.db.commit()
+        await self.db.refresh(user_address)
         return user_address
 
-    def soft_delete(self, user_address: UserAddress) -> None:
+    async def soft_delete(self, user_address: UserAddressOrm) -> None:
         user_address.is_deleted = True
         self.db.add(user_address)
-        self.db.commit()
+        await self.db.commit()

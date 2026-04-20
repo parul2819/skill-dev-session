@@ -4,7 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.core.db.base import Base
 
 
-class OrderRating(Base):
+class OrderRatingOrm(Base):
     __tablename__ = "order_ratings"
     __table_args__ = (
         UniqueConstraint("order_id", name="order_ratings_order_id_key"),

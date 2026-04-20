@@ -1,14 +1,9 @@
 from fastapi import FastAPI
-from app.api.controller.user_controller import router as user_router
-from app.api.controller.restaurant_controller import router as restaurant_controller
-from app.api.controller.menu_items_controller import router as menu_items_controller
-from app.api.controller.offers_controller import router as offers_controller
-from app.api.controller.cart_controller import router as cart_controller
-from app.api.controller.cart_items_controller import router as cart_items_controller
-from app.api.controller.orders_controller import router as orders_controller
-from app.api.controller.order_items_controller import router as order_items_controller
-from app.api.controller.order_ratings_controller import router as order_ratings_controller
-from app.api.controller.user_addresses_controller import router as user_addresses_controller
+from app.api import (cart_router, cart_items_router, menu_items_router,
+                                offers_router, order_items_router, order_ratings_router,
+                                orders_router, restaurant_router, user_addresses_router,
+                                user_router)
+
 from app.core.db.base import Base
 from app.core.db.session import engine
 import app.orm  # noqa: F401  # ensure all models are imported
@@ -23,15 +18,15 @@ def on_startup() -> None:
 
 
 delivery_app.include_router(user_router)
-delivery_app.include_router(restaurant_controller)
-delivery_app.include_router(menu_items_controller)
-delivery_app.include_router(offers_controller)
-delivery_app.include_router(cart_controller)
-delivery_app.include_router(cart_items_controller)
-delivery_app.include_router(orders_controller)
-delivery_app.include_router(order_items_controller)
-delivery_app.include_router(order_ratings_controller)
-delivery_app.include_router(user_addresses_controller)
+delivery_app.include_router(restaurant_router)
+delivery_app.include_router(menu_items_router)
+delivery_app.include_router(offers_router)
+delivery_app.include_router(cart_router)
+delivery_app.include_router(cart_items_router)
+delivery_app.include_router(orders_router)
+delivery_app.include_router(order_items_router)
+delivery_app.include_router(order_ratings_router)
+delivery_app.include_router(user_addresses_router)
 
 
 @delivery_app.get("/health")
