@@ -2,6 +2,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
 from app.common.enums import OrderStatusEnum
 
+
 class OrderCreate(BaseModel):
     user_id: int
     restaurant_id: int
@@ -11,6 +12,7 @@ class OrderCreate(BaseModel):
     final_amount: float = Field(ge=0)
     order_status: OrderStatusEnum = OrderStatusEnum.pending
 
+
 class OrderUpdate(BaseModel):
     user_id: int | None = None
     restaurant_id: int | None = None
@@ -19,6 +21,7 @@ class OrderUpdate(BaseModel):
     discount_amount: float | None = Field(default=None, ge=0)
     final_amount: float | None = Field(default=None, ge=0)
     order_status: OrderStatusEnum | None = None
+
 
 class OrderRead(BaseModel):
     model_config = ConfigDict(from_attributes=True)

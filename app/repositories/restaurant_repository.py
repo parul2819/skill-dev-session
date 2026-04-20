@@ -1,37 +1,39 @@
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.orm.restaurants import Restaurant
+from app.orm import RestaurantOrm
 
 
 class RestaurantRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[Restaurant]:
-        stmt = select(Restaurant).where(Restaurant.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[RestaurantOrm]:
+        stmt = select(RestaurantOrm).where(RestaurantOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, restaurant_id: int) -> Restaurant | None:
-        stmt = select(Restaurant).where(
-            Restaurant.restaurant_id == restaurant_id,
-            Restaurant.is_deleted.is_(False),
+    async def get_by_id(self, restaurant_id: int) -> RestaurantOrm | None:
+        stmt = select(RestaurantOrm).where(
+            RestaurantOrm.restaurant_id == restaurant_id,
+            RestaurantOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def create(self, restaurant: Restaurant) -> Restaurant:
+    async def create(self, restaurant: RestaurantOrm) -> RestaurantOrm:
         self.db.add(restaurant)
-        self.db.commit()
-        self.db.refresh(restaurant)
+        await self.db.commit()
+        await self.db.refresh(restaurant)
         return restaurant
 
-    def update(self, restaurant: Restaurant) -> Restaurant:
+    async def update(self, restaurant: RestaurantOrm) -> RestaurantOrm:
         self.db.add(restaurant)
-        self.db.commit()
-        self.db.refresh(restaurant)
+        await self.db.commit()
+        await self.db.refresh(restaurant)
         return restaurant
 
-    def soft_delete(self, restaurant: Restaurant) -> None:
+    async def soft_delete(self, restaurant: RestaurantOrm) -> None:
         restaurant.is_deleted = True
         self.db.add(restaurant)
-        self.db.commit()
+        await self.db.commit()

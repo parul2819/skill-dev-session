@@ -1,37 +1,39 @@
 from sqlalchemy import select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.orm.menu_items import MenuItem
+from app.orm import MenuItemOrm
 
 
 class MenuItemRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[MenuItem]:
-        stmt = select(MenuItem).where(MenuItem.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[MenuItemOrm]:
+        stmt = select(MenuItemOrm).where(MenuItemOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, item_id: int) -> MenuItem | None:
-        stmt = select(MenuItem).where(
-            MenuItem.item_id == item_id,
-            MenuItem.is_deleted.is_(False),
+    async def get_by_id(self, item_id: int) -> MenuItemOrm | None:
+        stmt = select(MenuItemOrm).where(
+            MenuItemOrm.item_id == item_id,
+            MenuItemOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def create(self, item: MenuItem) -> MenuItem:
+    async def create(self, item: MenuItemOrm) -> MenuItemOrm:
         self.db.add(item)
-        self.db.commit()
-        self.db.refresh(item)
+        await self.db.commit()
+        await self.db.refresh(item)
         return item
 
-    def update(self, item: MenuItem) -> MenuItem:
+    async def update(self, item: MenuItemOrm) -> MenuItemOrm:
         self.db.add(item)
-        self.db.commit()
-        self.db.refresh(item)
+        await self.db.commit()
+        await self.db.refresh(item)
         return item
 
-    def soft_delete(self, item: MenuItem) -> None:
+    async def soft_delete(self, item: MenuItemOrm) -> None:
         item.is_deleted = True
         self.db.add(item)
-        self.db.commit()
+        await self.db.commit()

@@ -4,7 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.core.db.base import Base
 
 
-class CartItem(Base):
+class CartItemOrm(Base):
     __tablename__ = "cart_items"
 
     cart_item_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

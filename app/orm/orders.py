@@ -5,7 +5,7 @@ from app.common.enums import OrderStatusEnum
 from app.core.db.base import Base
 
 
-class Order(Base):
+class OrderOrm(Base):
     __tablename__ = "orders"
 
     order_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

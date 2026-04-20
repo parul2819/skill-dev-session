@@ -1,49 +1,54 @@
 from sqlalchemy import select
-from sqlalchemy.orm import Session
-from app.orm.order_ratings import OrderRating
+from sqlalchemy.ext.asyncio import AsyncSession
+from app.orm import OrderRatingOrm
+
 
 class OrderRatingRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[OrderRating]:
-        stmt = select(OrderRating).where(OrderRating.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[OrderRatingOrm]:
+        stmt = select(OrderRatingOrm).where(OrderRatingOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, rating_id: int) -> OrderRating | None:
-        stmt = select(OrderRating).where(
-            OrderRating.rating_id == rating_id,
-            OrderRating.is_deleted.is_(False),
+    async def get_by_id(self, rating_id: int) -> OrderRatingOrm | None:
+        stmt = select(OrderRatingOrm).where(
+            OrderRatingOrm.rating_id == rating_id,
+            OrderRatingOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def get_by_order_id(self, order_id: int) -> OrderRating | None:
-        stmt = select(OrderRating).where(
-            OrderRating.order_id == order_id,
-            OrderRating.is_deleted.is_(False),
+    async def get_by_order_id(self, order_id: int) -> OrderRatingOrm | None:
+        stmt = select(OrderRatingOrm).where(
+            OrderRatingOrm.order_id == order_id,
+            OrderRatingOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def get_by_restaurant_id(self, restaurant_id: int) -> list[OrderRating]:
-        stmt = select(OrderRating).where(
-            OrderRating.restaurant_id == restaurant_id,
-            OrderRating.is_deleted.is_(False),
+    async def get_by_restaurant_id(self, restaurant_id: int) -> list[OrderRatingOrm]:
+        stmt = select(OrderRatingOrm).where(
+            OrderRatingOrm.restaurant_id == restaurant_id,
+            OrderRatingOrm.is_deleted.is_(False),
         )
-        return list(self.db.scalars(stmt).all())
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def create(self, order_rating: OrderRating) -> OrderRating:
+    async def create(self, order_rating: OrderRatingOrm) -> OrderRatingOrm:
         self.db.add(order_rating)
-        self.db.commit()
-        self.db.refresh(order_rating)
+        await self.db.commit()
+        await self.db.refresh(order_rating)
         return order_rating
 
-    def update(self, order_rating: OrderRating) -> OrderRating:
+    async def update(self, order_rating: OrderRatingOrm) -> OrderRatingOrm:
         self.db.add(order_rating)
-        self.db.commit()
-        self.db.refresh(order_rating)
+        await self.db.commit()
+        await self.db.refresh(order_rating)
         return order_rating
 
-    def soft_delete(self, order_rating: OrderRating) -> None:
+    async def soft_delete(self, order_rating: OrderRatingOrm) -> None:
         order_rating.is_deleted = True
         self.db.add(order_rating)
-        self.db.commit()
+        await self.db.commit()

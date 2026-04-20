@@ -1,42 +1,46 @@
 from sqlalchemy import select
-from sqlalchemy.orm import Session
-from app.orm.order_items import OrderItem
+from sqlalchemy.ext.asyncio import AsyncSession
+from app.orm import OrderItemOrm
+
 
 class OrderItemRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[OrderItem]:
-        stmt = select(OrderItem).where(OrderItem.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[OrderItemOrm]:
+        stmt = select(OrderItemOrm).where(OrderItemOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, order_item_id: int) -> OrderItem | None:
-        stmt = select(OrderItem).where(
-            OrderItem.order_item_id == order_item_id,
-            OrderItem.is_deleted.is_(False),
+    async def get_by_id(self, order_item_id: int) -> OrderItemOrm | None:
+        stmt = select(OrderItemOrm).where(
+            OrderItemOrm.order_item_id == order_item_id,
+            OrderItemOrm.is_deleted.is_(False),
         )
-        return self.db.scalars(stmt).first()
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def get_by_order_id(self, order_id: int) -> list[OrderItem]:
-        stmt = select(OrderItem).where(
-            OrderItem.order_id == order_id,
-            OrderItem.is_deleted.is_(False),
+    async def get_by_order_id(self, order_id: int) -> list[OrderItemOrm]:
+        stmt = select(OrderItemOrm).where(
+            OrderItemOrm.order_id == order_id,
+            OrderItemOrm.is_deleted.is_(False),
         )
-        return list(self.db.scalars(stmt).all())
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def create(self, order_item: OrderItem) -> OrderItem:
+    async def create(self, order_item: OrderItemOrm) -> OrderItemOrm:
         self.db.add(order_item)
-        self.db.commit()
-        self.db.refresh(order_item)
+        await self.db.commit()
+        await self.db.refresh(order_item)
         return order_item
 
-    def update(self, order_item: OrderItem) -> OrderItem:
+    async def update(self, order_item: OrderItemOrm) -> OrderItemOrm:
         self.db.add(order_item)
-        self.db.commit()
-        self.db.refresh(order_item)
+        await self.db.commit()
+        await self.db.refresh(order_item)
         return order_item
 
-    def soft_delete(self, order_item: OrderItem) -> None:
+    async def soft_delete(self, order_item: OrderItemOrm) -> None:
         order_item.is_deleted = True
         self.db.add(order_item)
-        self.db.commit()
+        await self.db.commit()

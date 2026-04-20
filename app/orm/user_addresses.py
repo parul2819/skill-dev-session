@@ -4,7 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.core.db.base import Base
 
 
-class UserAddress(Base):
+class UserAddressOrm(Base):
     __tablename__ = "user_addresses"
     __table_args__ = (UniqueConstraint("user_id", "is_default", name="unique_default_address_per_user"),)
 

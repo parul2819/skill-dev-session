@@ -4,7 +4,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.core.db.base import Base
 
 
-class MenuItem(Base):
+class MenuItemOrm(Base):
     __tablename__ = "menu_items"
 
     item_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

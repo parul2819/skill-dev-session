@@ -1,37 +1,40 @@
 from sqlalchemy import select
-from sqlalchemy.orm import Session
-from app.orm.users import User
+from sqlalchemy.ext.asyncio import AsyncSession
+from app.orm import UserOrm
 
 
 class UserRepository:
-    def __init__(self, db: Session) -> None:
+    def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    def list_active(self) -> list[User]:
-        stmt = select(User).where(User.is_deleted.is_(False))
-        return list(self.db.scalars(stmt).all())
+    async def list_active(self) -> list[UserOrm]:
+        stmt = select(UserOrm).where(UserOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return list(result.all())
 
-    def get_by_id(self, user_id: int) -> User | None:
-        stmt = select(User).where(User.user_id == user_id, User.is_deleted.is_(False))
-        return self.db.scalars(stmt).first()
+    async def get_by_id(self, user_id: int) -> UserOrm | None:
+        stmt = select(UserOrm).where(UserOrm.user_id == user_id, UserOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt) 
+        return result.first()
 
-    def get_by_email(self, email: str) -> User | None:
-        stmt = select(User).where(User.email == email, User.is_deleted.is_(False))
-        return self.db.scalars(stmt).first()
+    async def get_by_email(self, email: str) -> UserOrm | None:
+        stmt = select(UserOrm).where(UserOrm.email == email, UserOrm.is_deleted.is_(False))
+        result = await self.db.scalars(stmt)
+        return result.first()
 
-    def create(self, user: User) -> User:
+    async def create(self, user: UserOrm) -> UserOrm:
         self.db.add(user)
-        self.db.commit()
-        self.db.refresh(user)
+        await self.db.commit()
+        await self.db.refresh(user)
         return user
 
-    def update(self, user: User) -> User:
+    async def update(self, user: UserOrm) -> UserOrm:
         self.db.add(user)
-        self.db.commit()
-        self.db.refresh(user)
+        await self.db.commit()
+        await self.db.refresh(user)
         return user
 
-    def soft_delete(self, user: User) -> None:
+    async def soft_delete(self, user: UserOrm) -> None:
         user.is_deleted = True
         self.db.add(user)
-        self.db.commit()
+        await self.db.commit()
