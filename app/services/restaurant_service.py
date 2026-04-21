@@ -1,5 +1,4 @@
-from fastapi import HTTPException, status
-
+from app.core.exceptions.custom_exceptions import NotFoundException
 from app.dto import RestaurantCreate, RestaurantUpdate
 from app.orm import RestaurantOrm
 from app.repositories import RestaurantRepository
@@ -15,7 +14,7 @@ class RestaurantService:
     async def get_restaurant(self, restaurant_id: int) -> RestaurantOrm:
         restaurant = await self.repo.get_by_id(restaurant_id)
         if not restaurant:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Restaurant not found")
+            raise NotFoundException()
         return restaurant
 
     async def create_restaurant(self, payload: RestaurantCreate) -> RestaurantOrm:
