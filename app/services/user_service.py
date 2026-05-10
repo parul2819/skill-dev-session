@@ -1,11 +1,11 @@
-import logging
-from fastapi import HTTPException, status
-from app.core.exceptions.custom_exceptions import NotFoundException
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException, ConflictException
+from app.core.security import hash_password
 from app.dto import UserCreate, UserUpdate
 from app.orm import UserOrm
 from app.repositories import UserRepository
 
-logger = logging.getLogger("app.services.user_service")
+logger = setup_logger()
 
 class UserService:
     def __init__(self, repo: UserRepository) -> None:
@@ -29,13 +29,14 @@ class UserService:
         existing = await self.repo.get_by_email(payload.email)
         if existing:
             logger.error(f"Email conflict: {payload.email} already exists")
-            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Email already exists")
+            raise ConflictException(message="Email already exists")
 
         user = UserOrm(
             name=payload.name,
             email=payload.email,
-            password=payload.password,
+            password=hash_password(payload.password),
             phone_number=payload.phone_number,
+            bio=payload.bio,
         )
         return await self.repo.create(user)
 

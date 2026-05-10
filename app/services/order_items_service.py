@@ -1,8 +1,10 @@
-from fastapi import HTTPException, status
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException
 from app.dto import OrderItemCreate, OrderItemUpdate
 from app.orm import OrderItemOrm
 from app.repositories import OrderItemRepository
 
+logger = setup_logger()
 
 class OrderItemService:
     def __init__(self, repo: OrderItemRepository) -> None:
@@ -14,7 +16,8 @@ class OrderItemService:
     async def get_order_item(self, order_item_id: int) -> OrderItemOrm:
         order_item = await self.repo.get_by_id(order_item_id)
         if not order_item:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Order item not found")
+            logger.error(f"Order item not found with ID: {order_item_id}")
+            raise NotFoundException(message="Order item not found")
         return order_item
 
     async def list_order_items_by_order(self, order_id: int) -> list[OrderItemOrm]:

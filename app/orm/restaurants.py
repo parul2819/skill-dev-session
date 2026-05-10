@@ -1,11 +1,12 @@
-from sqlalchemy import Boolean, Enum, Integer, String, Text, TIMESTAMP, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import Enum, Integer, String, Text
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.common.enums import RestaurantStatusEnum
+from app.utils.enums import RestaurantStatusEnum
 from app.core.db.base import Base
+from app.orm.base import AuditMixin
 
 
-class RestaurantOrm(Base):
+class RestaurantOrm(Base, AuditMixin):
     __tablename__ = "restaurants"
 
     restaurant_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -17,8 +18,9 @@ class RestaurantOrm(Base):
         default=RestaurantStatusEnum.active,
         nullable=False,
     )
-    created_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    updated_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    created_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    updated_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    menu_items = relationship("MenuItemOrm", back_populates="restaurant")
+    carts = relationship("CartOrm", back_populates="restaurant")
+    orders = relationship("OrderOrm", back_populates="restaurant")
+    ratings = relationship("OrderRatingOrm", back_populates="restaurant")
+    

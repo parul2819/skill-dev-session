@@ -1,10 +1,11 @@
-from sqlalchemy import Boolean, ForeignKey, Integer, Numeric, String, Text, TIMESTAMP, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import Boolean, ForeignKey, Integer, Numeric, String, Text
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.db.base import Base
+from app.orm.base import AuditMixin
 
 
-class MenuItemOrm(Base):
+class MenuItemOrm(Base, AuditMixin):
     __tablename__ = "menu_items"
 
     item_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -14,8 +15,8 @@ class MenuItemOrm(Base):
     price: Mapped[float] = mapped_column(Numeric(8, 2), nullable=False)
     is_veg: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
     is_available: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
-    created_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    updated_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    created_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    updated_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    restaurant = relationship("RestaurantOrm", back_populates="menu_items")
+    order_items = relationship("OrderItemOrm", back_populates="menu_item")
+    cart_items = relationship("CartItemOrm", back_populates="menu_item")
+    

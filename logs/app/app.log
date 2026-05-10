@@ -1593,3 +1593,565 @@
 2026-04-21 16:27:57,177 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
 2026-04-21 16:27:57,178 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
 2026-04-21 16:27:57,178 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [36460]
+2026-04-21 16:28:26,861 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-04-21 16:28:26,861 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [20980]
+2026-04-21 16:28:26,861 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-04-21 16:28:26,864 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-04-21 16:35:53,027 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1.3233000063337386ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-04-21 16:35:53,031 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59510 - "GET /docs HTTP/1.1" 200
+2026-04-21 16:35:53,605 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 305.3044999833219ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-04-21 16:35:53,605 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59510 - "GET /openapi.json HTTP/1.1" 200
+2026-04-21 16:36:13,329 | app.services.user_service | INFO | app\services\user_service.py:19 | Fetching user details for ID: 89
+2026-04-21 16:36:13,885 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 599.4239000137895ms | Request URL : http://127.0.0.1:8000/users/89 | Request Method : GET | 
+2026-04-21 16:36:13,885 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56547 - "GET /users/89 HTTP/1.1" 404
+2026-05-04 10:46:34,172 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-04 10:46:34,175 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [39344]
+2026-05-04 10:46:34,175 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-04 10:46:34,175 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-04 10:47:00,694 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.6517000001622364ms | Request URL : http://127.0.0.1:8000/ | Request Method : GET | 
+2026-05-04 10:47:00,695 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:63762 - "GET / HTTP/1.1" 404
+2026-05-04 10:47:00,829 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.5175999976927415ms | Request URL : http://127.0.0.1:8000/favicon.ico | Request Method : GET | 
+2026-05-04 10:47:00,830 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:63762 - "GET /favicon.ico HTTP/1.1" 404
+2026-05-04 10:47:06,368 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.6766000005882233ms | Request URL : http://127.0.0.1:8000/ | Request Method : GET | 
+2026-05-04 10:47:06,368 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56724 - "GET / HTTP/1.1" 404
+2026-05-04 10:47:20,402 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.47420000191777945ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-04 10:47:20,402 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51622 - "GET /docs HTTP/1.1" 200
+2026-05-04 10:47:21,104 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 181.04689999017864ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-05-04 10:47:21,106 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51622 - "GET /openapi.json HTTP/1.1" 200
+2026-05-04 10:53:45,458 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-04 10:53:45,459 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [39604]
+2026-05-04 10:53:45,459 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-04 10:53:45,460 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-04 10:53:48,198 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.7108999998308718ms | Request URL : http://127.0.0.1:8000/ | Request Method : GET | 
+2026-05-04 10:53:48,200 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57196 - "GET / HTTP/1.1" 404
+2026-05-04 10:53:54,141 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.43929999810643494ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-04 10:53:54,141 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52956 - "GET /docs HTTP/1.1" 200
+2026-05-04 10:53:54,496 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 166.7065000074217ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-05-04 10:53:54,496 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52956 - "GET /openapi.json HTTP/1.1" 200
+2026-05-04 10:57:14,938 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-04 10:57:15,049 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-04 10:57:15,050 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-04 10:57:15,050 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [39604]
+2026-05-04 10:57:19,250 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-04 10:57:19,253 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [28296]
+2026-05-04 10:57:19,253 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-04 10:57:19,254 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-04 10:57:22,825 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 3.8743000040994957ms | Request URL : http://127.0.0.1:8000/ui/restaurants | Request Method : GET | 
+2026-05-04 10:57:22,825 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53032 - "GET /ui/restaurants HTTP/1.1" 200
+2026-05-04 10:58:00,857 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.33209999673999846ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-04 10:58:00,859 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57381 - "GET /docs HTTP/1.1" 200
+2026-05-04 10:58:01,168 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 181.87689999467693ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-05-04 10:58:01,168 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57381 - "GET /openapi.json HTTP/1.1" 200
+2026-05-04 10:58:04,557 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.4653000069083646ms | Request URL : http://127.0.0.1:8000/ | Request Method : GET | 
+2026-05-04 10:58:04,557 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57381 - "GET / HTTP/1.1" 404
+2026-05-04 10:58:27,664 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.7864999934099615ms | Request URL : http://127.0.0.1:8000/ui/restaurants | Request Method : GET | 
+2026-05-04 10:58:27,664 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:49667 - "GET /ui/restaurants HTTP/1.1" 200
+2026-05-04 10:58:28,168 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 473.1869999959599ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 10:58:28,168 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:49667 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 10:59:46,613 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-04 10:59:46,724 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-04 10:59:46,725 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-04 10:59:46,726 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [28296]
+2026-05-04 10:59:49,877 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-04 10:59:49,878 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [30792]
+2026-05-04 10:59:49,879 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-04 10:59:49,879 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-04 11:00:30,352 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-04 11:00:30,463 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-04 11:00:30,464 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-04 11:00:30,464 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [30792]
+2026-05-04 11:00:34,069 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-04 11:00:34,070 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [36880]
+2026-05-04 11:00:34,071 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-04 11:00:34,072 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-04 11:01:09,742 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-04 11:01:09,849 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-04 11:01:09,849 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-04 11:01:09,851 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [36880]
+2026-05-04 11:01:13,002 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-04 11:01:13,003 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [36940]
+2026-05-04 11:01:13,003 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-04 11:01:13,003 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-04 11:34:13,205 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 550.4127000021981ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 11:34:13,206 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51149 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 11:34:13,233 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 23.684600004344247ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 11:34:13,233 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53140 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 11:47:35,157 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 65.57559999055229ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 11:47:35,158 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:60860 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 11:49:12,064 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 46.65839999506716ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 11:49:12,065 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:55370 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 11:57:05,291 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 162.16829999757465ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 11:57:05,292 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59358 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:00:50,102 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 85.98720000009052ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:00:50,102 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50634 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:29:11,610 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 112.16419999254867ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:29:11,612 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51947 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:30:20,690 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 66.07420000364073ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:30:20,691 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:49384 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:30:25,243 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 184.24859999504406ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:30:25,247 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:49384 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:34:39,945 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 72.50609999755397ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:34:39,946 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:61061 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:34:50,715 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 63.16079999669455ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:34:50,716 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64787 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-04 12:35:04,927 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 86.84160000120755ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-04 12:35:04,927 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56417 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 07:06:16,962 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 86.77160000661388ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 07:06:16,964 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:55718 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 10:01:08,721 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 323.3588999719359ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 10:01:08,722 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58110 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 10:02:32,255 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 65.497100003995ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 10:02:32,256 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57974 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 10:08:13,426 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 111.07680000714026ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 10:08:13,427 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52592 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 10:09:21,461 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 61.37829998624511ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 10:09:21,462 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56639 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 10:14:30,457 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 176.5706999867689ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 10:14:30,457 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:55293 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 10:53:59,566 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 199.67370000085793ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 10:53:59,572 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57095 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 11:33:00,083 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 126.70199997955933ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 11:33:00,084 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:63896 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 11:35:06,111 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 32.9654999950435ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 11:35:06,111 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65371 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 11:35:12,391 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 72.61830000788905ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 11:35:12,391 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54254 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 11:42:14,884 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 80.59620001586154ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 11:42:14,885 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50308 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 11:42:24,071 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 76.52110001072288ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 11:42:24,072 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62032 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 11:43:43,628 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 77.16919999802485ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-05 11:43:43,629 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64558 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-05 12:09:15,159 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-05 12:09:15,267 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-05 12:09:15,268 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-05 12:09:15,269 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [36940]
+2026-05-06 04:17:19,025 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 04:17:19,027 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [47848]
+2026-05-06 04:17:19,028 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 04:17:19,029 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 04:17:22,836 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56988 - "GET /restaurants/ HTTP/1.1" 500
+2026-05-06 04:18:41,605 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 04:18:41,717 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 04:18:41,718 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 04:18:41,719 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [47848]
+2026-05-06 04:18:45,322 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 04:18:45,324 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [42764]
+2026-05-06 04:18:45,324 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 04:18:45,326 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 04:19:00,159 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 04:19:00,267 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [42764]
+2026-05-06 04:19:00,395 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:94 | ASGI 'lifespan' protocol appears unsupported.
+2026-05-06 04:19:15,333 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 04:19:15,334 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [50592]
+2026-05-06 04:19:15,334 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 04:19:15,335 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 04:19:33,388 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 654.2768999934196ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-06 04:19:33,389 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:61818 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-06 04:19:47,964 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 74.11980000324547ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-06 04:19:47,968 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54341 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-06 04:51:48,987 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 55.94290001317859ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-06 04:51:48,988 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58850 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-06 05:24:31,045 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 65.13899998390116ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-06 05:24:31,045 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58571 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-06 05:39:10,588 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 254.4511000160128ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-06 05:39:10,590 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59872 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-06 06:27:15,289 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 06:27:15,396 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 06:27:15,398 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 06:27:15,398 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [50592]
+2026-05-06 06:27:24,208 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 06:27:24,211 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [42632]
+2026-05-06 06:27:24,212 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 06:27:24,216 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 09:56:22,012 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 09:56:22,124 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 09:56:22,124 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 09:56:22,124 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [42632]
+2026-05-06 11:48:43,882 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:48:43,887 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [46380]
+2026-05-06 11:48:43,887 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:48:43,890 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 11:49:32,325 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 11:49:32,434 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 11:49:32,434 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 11:49:32,434 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [46380]
+2026-05-06 11:49:41,645 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:49:41,647 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [49596]
+2026-05-06 11:49:41,648 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:49:41,649 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 11:50:20,248 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 11:50:20,356 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 11:50:20,358 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 11:50:20,358 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [49596]
+2026-05-06 11:50:25,590 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:50:25,592 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [52864]
+2026-05-06 11:50:25,593 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:50:25,594 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 11:50:28,094 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 11:50:28,203 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 11:50:28,204 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 11:50:28,204 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [52864]
+2026-05-06 11:50:33,583 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:50:33,586 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [50684]
+2026-05-06 11:50:33,586 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:50:33,587 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 11:50:58,335 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 11:50:58,438 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 11:50:58,440 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 11:50:58,440 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [50684]
+2026-05-06 11:51:05,030 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:51:05,034 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [54464]
+2026-05-06 11:51:05,034 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:51:05,034 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 11:55:15,169 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 11:55:15,277 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 11:55:15,278 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 11:55:15,278 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [54464]
+2026-05-06 11:55:20,070 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:55:20,072 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [35176]
+2026-05-06 11:55:20,072 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:55:20,073 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 11:56:51,783 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 11:56:51,893 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 11:56:51,894 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 11:56:51,894 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [35176]
+2026-05-06 11:56:57,025 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 11:56:57,027 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [46660]
+2026-05-06 11:56:57,028 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 11:56:57,029 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 15:55:42,343 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 15:55:42,452 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 15:55:42,453 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 15:55:42,453 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [46660]
+2026-05-06 15:55:46,616 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 15:55:46,618 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [38264]
+2026-05-06 15:55:46,618 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 15:55:46,619 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 16:10:44,784 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 16:10:44,895 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 16:10:44,895 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 16:10:44,896 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [38264]
+2026-05-06 16:11:25,528 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 16:11:25,529 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [28044]
+2026-05-06 16:11:25,530 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 16:11:25,531 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 16:11:58,389 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 2.374600007897243ms | Request URL : http://127.0.0.1:8000/ | Request Method : GET | 
+2026-05-06 16:11:58,390 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65174 - "GET / HTTP/1.1" 404
+2026-05-06 16:12:02,309 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.46209999709390104ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-06 16:12:02,309 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65174 - "GET /docs HTTP/1.1" 200
+2026-05-06 16:12:02,623 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 201.59659997443669ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-05-06 16:12:02,623 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65174 - "GET /openapi.json HTTP/1.1" 200
+2026-05-06 16:12:13,563 | app | INFO | app\services\user_service.py:15 | Listing all active users
+2026-05-06 16:12:15,098 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1564.409099984914ms | Request URL : http://127.0.0.1:8000/users/ | Request Method : GET | 
+2026-05-06 16:12:15,099 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:61839 - "GET /users/ HTTP/1.1" 200
+2026-05-06 16:14:37,117 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.4094999749213457ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-06 16:14:37,117 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:61590 - "GET /docs HTTP/1.1" 200
+2026-05-06 16:14:52,459 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.5544000305235386ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-06 16:14:52,459 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50683 - "GET /docs HTTP/1.1" 200
+2026-05-06 16:14:52,842 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 2.393100003246218ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-05-06 16:14:52,843 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50683 - "GET /openapi.json HTTP/1.1" 200
+2026-05-06 16:15:08,009 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 100
+2026-05-06 16:15:08,033 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 24.5547000085935ms | Request URL : http://127.0.0.1:8000/users/100 | Request Method : GET | 
+2026-05-06 16:15:08,034 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:55176 - "GET /users/100 HTTP/1.1" 200
+2026-05-06 16:16:39,404 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 16:16:39,512 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 16:16:39,527 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 16:16:39,528 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [28044]
+2026-05-06 16:16:49,953 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 16:16:49,955 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [35240]
+2026-05-06 16:16:49,956 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 16:16:49,957 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 16:18:05,174 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-06 16:18:05,284 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-06 16:18:05,284 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-06 16:18:05,286 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [35240]
+2026-05-06 16:18:10,137 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-06 16:18:10,138 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [38168]
+2026-05-06 16:18:10,139 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-06 16:18:10,139 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-06 16:18:30,062 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 2.641499973833561ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-06 16:18:30,065 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51296 - "GET /docs HTTP/1.1" 200
+2026-05-06 16:18:30,392 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 195.21189999068156ms | Request URL : http://127.0.0.1:8000/openapi.json | Request Method : GET | 
+2026-05-06 16:18:30,393 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51296 - "GET /openapi.json HTTP/1.1" 200
+2026-05-06 16:19:12,932 | app | INFO | app\services\user_service.py:28 | Attempting to create user with email: testuser@gmail.com
+2026-05-06 16:19:13,817 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62885 - "POST /users/ HTTP/1.1" 500
+2026-05-06 16:26:29,492 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 11111
+2026-05-06 16:26:29,500 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 8.324499998707324ms | Request URL : http://127.0.0.1:8000/users/11111 | Request Method : GET | 
+2026-05-06 16:26:29,500 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:60255 - "GET /users/11111 HTTP/1.1" 200
+2026-05-06 16:26:31,745 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 11111
+2026-05-06 16:26:31,750 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 4.583399975672364ms | Request URL : http://127.0.0.1:8000/users/11111 | Request Method : GET | 
+2026-05-06 16:26:31,750 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:60255 - "GET /users/11111 HTTP/1.1" 200
+2026-05-06 16:26:41,682 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 22222
+2026-05-06 16:26:41,687 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.038600007537752ms | Request URL : http://127.0.0.1:8000/users/22222 | Request Method : GET | 
+2026-05-06 16:26:41,687 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53968 - "GET /users/22222 HTTP/1.1" 404
+2026-05-06 16:26:51,078 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 15000
+2026-05-06 16:26:51,082 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 4.200299968943ms | Request URL : http://127.0.0.1:8000/users/15000 | Request Method : GET | 
+2026-05-06 16:26:51,083 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64700 - "GET /users/15000 HTTP/1.1" 200
+2026-05-06 16:26:56,773 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 16000
+2026-05-06 16:26:56,777 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 4.941400024108589ms | Request URL : http://127.0.0.1:8000/users/16000 | Request Method : GET | 
+2026-05-06 16:26:56,777 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56049 - "GET /users/16000 HTTP/1.1" 200
+2026-05-06 16:27:00,892 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 17000
+2026-05-06 16:27:00,895 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 3.880399977788329ms | Request URL : http://127.0.0.1:8000/users/17000 | Request Method : GET | 
+2026-05-06 16:27:00,895 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56049 - "GET /users/17000 HTTP/1.1" 200
+2026-05-06 16:27:06,206 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 20000
+2026-05-06 16:27:06,209 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 3.8514999905601144ms | Request URL : http://127.0.0.1:8000/users/20000 | Request Method : GET | 
+2026-05-06 16:27:06,210 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50306 - "GET /users/20000 HTTP/1.1" 200
+2026-05-06 16:27:10,868 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 21000
+2026-05-06 16:27:10,873 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 6.454399961512536ms | Request URL : http://127.0.0.1:8000/users/21000 | Request Method : GET | 
+2026-05-06 16:27:10,873 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50306 - "GET /users/21000 HTTP/1.1" 404
+2026-05-06 16:27:17,603 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 20001
+2026-05-06 16:27:17,607 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 4.012899997178465ms | Request URL : http://127.0.0.1:8000/users/20001 | Request Method : GET | 
+2026-05-06 16:27:17,607 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58664 - "GET /users/20001 HTTP/1.1" 404
+2026-05-06 16:27:21,687 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 20000
+2026-05-06 16:27:21,690 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 3.198099962901324ms | Request URL : http://127.0.0.1:8000/users/20000 | Request Method : GET | 
+2026-05-06 16:27:21,691 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58664 - "GET /users/20000 HTTP/1.1" 200
+2026-05-08 03:39:54,973 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-08 03:39:54,979 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [45932]
+2026-05-08 03:39:54,979 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-08 03:39:54,985 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-08 03:40:17,044 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.4748999904841185ms | Request URL : http://127.0.0.1:8000/health | Request Method : GET | 
+2026-05-08 03:40:17,044 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50542 - "GET /health HTTP/1.1" 200
+2026-05-08 03:44:02,463 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.7876000017859042ms | Request URL : http://127.0.0.1:8000/docs | Request Method : GET | 
+2026-05-08 03:44:02,464 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:63771 - "GET /docs HTTP/1.1" 200
+2026-05-08 03:44:54,245 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 0.4974000039510429ms | Request URL : http://127.0.0.1:8000/users | Request Method : GET | 
+2026-05-08 03:44:54,246 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64557 - "GET /users HTTP/1.1" 307
+2026-05-08 03:44:54,281 | app | INFO | app\services\user_service.py:15 | Listing all active users
+2026-05-08 03:44:56,171 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1922.7430999744684ms | Request URL : http://127.0.0.1:8000/users/ | Request Method : GET | 
+2026-05-08 03:44:56,171 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64557 - "GET /users/ HTTP/1.1" 200
+2026-05-08 03:48:08,713 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-08 03:48:08,713 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [27868]
+2026-05-08 03:48:08,716 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-08 03:48:08,721 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-08 03:48:11,750 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 629.9185999669135ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 03:48:11,752 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:63718 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:01:00,937 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 73.49930005148053ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:01:00,937 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53116 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:01:15,212 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 85.63789998879656ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:01:15,213 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65308 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:01:45,976 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 89.71580001525581ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:01:45,977 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50981 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:13:50,398 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 172.45770001318306ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:13:50,399 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62703 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:13:56,582 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 78.31369998166338ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:13:56,583 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57442 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:13:56,882 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 69.96090000029653ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:13:56,883 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53554 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:20:40,247 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-08 04:20:40,358 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-08 04:20:40,359 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-08 04:20:40,360 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [27868]
+2026-05-08 04:20:56,981 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-08 04:20:56,983 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [54620]
+2026-05-08 04:20:56,983 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-08 04:20:56,984 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-08 04:21:07,308 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 78.8499999907799ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:21:07,310 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65388 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:40:01,220 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 184.92819997482002ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:40:01,220 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65190 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:43:22,959 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 74.48519999161363ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:43:22,959 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54151 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:44:12,799 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 83.75439996598288ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:44:12,800 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:55846 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:44:56,737 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 82.99909997731447ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:44:56,737 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58365 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:45:57,872 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 181.93680001422763ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:45:57,874 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:60836 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:50:12,282 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 66.56950002070516ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:50:12,283 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:51684 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-08 04:52:09,401 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 66.36940001044422ms | Request URL : http://127.0.0.1:8000/restaurants/ | Request Method : GET | 
+2026-05-08 04:52:09,402 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50628 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-09 14:58:36,146 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-09 14:58:36,156 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-09 15:01:16,974 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-09 15:01:16,979 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [2420]
+2026-05-09 15:01:16,979 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-09 15:01:16,980 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-09 15:01:16,981 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:224 | Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+2026-05-09 15:01:18,340 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 8.735299983527511ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-09 15:01:18,341 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52902 - "GET /health HTTP/1.1" 200
+2026-05-09 15:01:19,630 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1.3992000021971762ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-09 15:01:19,630 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64768 - "GET /health HTTP/1.1" 200
+2026-05-09 15:01:19,638 | app | INFO | app\services\user_service.py:15 | Listing all active users
+2026-05-09 15:01:20,771 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1135.3676000144333ms | Request URL : http://127.0.0.1:8001/users/ | Request Method : GET | 
+2026-05-09 15:01:20,771 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64769 - "GET /users/ HTTP/1.1" 200
+2026-05-09 15:01:20,860 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 1
+2026-05-09 15:01:20,872 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 13.843799999449402ms | Request URL : http://127.0.0.1:8001/users/1 | Request Method : GET | 
+2026-05-09 15:01:20,875 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64771 - "GET /users/1 HTTP/1.1" 200
+2026-05-09 15:01:21,287 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 408.00659998785704ms | Request URL : http://127.0.0.1:8001/restaurants/ | Request Method : GET | 
+2026-05-09 15:01:21,287 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64772 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-09 15:01:21,328 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.143399990629405ms | Request URL : http://127.0.0.1:8001/restaurants/1 | Request Method : GET | 
+2026-05-09 15:01:21,328 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:64773 - "GET /restaurants/1 HTTP/1.1" 200
+2026-05-09 15:01:22,341 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1009.3059999635443ms | Request URL : http://127.0.0.1:8001/menu-items/ | Request Method : GET | 
+2026-05-09 15:01:22,341 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54363 - "GET /menu-items/ HTTP/1.1" 200
+2026-05-09 15:01:22,488 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.369300022721291ms | Request URL : http://127.0.0.1:8001/menu-items/1 | Request Method : GET | 
+2026-05-09 15:01:22,489 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54364 - "GET /menu-items/1 HTTP/1.1" 200
+2026-05-09 15:01:22,554 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 41.20759997749701ms | Request URL : http://127.0.0.1:8001/offers/ | Request Method : GET | 
+2026-05-09 15:01:22,554 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54365 - "GET /offers/ HTTP/1.1" 200
+2026-05-09 15:01:22,565 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.80500002251938ms | Request URL : http://127.0.0.1:8001/offers/1 | Request Method : GET | 
+2026-05-09 15:01:22,565 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54366 - "GET /offers/1 HTTP/1.1" 200
+2026-05-09 15:01:27,838 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5269.204300013371ms | Request URL : http://127.0.0.1:8001/orders/ | Request Method : GET | 
+2026-05-09 15:01:27,839 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:54367 - "GET /orders/ HTTP/1.1" 200
+2026-05-09 15:01:28,405 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.873599962797016ms | Request URL : http://127.0.0.1:8001/orders/1 | Request Method : GET | 
+2026-05-09 15:01:28,406 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53581 - "GET /orders/1 HTTP/1.1" 200
+2026-05-09 15:02:41,942 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-09 15:02:41,944 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [41568]
+2026-05-09 15:02:41,944 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-09 15:02:41,945 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-09 15:02:41,946 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:224 | Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+2026-05-09 15:02:42,296 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 8.757700037676841ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-09 15:02:42,296 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65286 - "GET /health HTTP/1.1" 200
+2026-05-09 15:02:43,522 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1.7455000197514892ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-09 15:02:43,523 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57174 - "GET /health HTTP/1.1" 200
+2026-05-09 15:02:43,553 | app | INFO | app\services\user_service.py:15 | Listing all active users
+2026-05-09 15:02:44,686 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1135.219399991911ms | Request URL : http://127.0.0.1:8001/users/ | Request Method : GET | 
+2026-05-09 15:02:44,686 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:57175 - "GET /users/ HTTP/1.1" 200
+2026-05-09 15:02:44,699 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 1
+2026-05-09 15:02:44,705 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.909399981144816ms | Request URL : http://127.0.0.1:8001/users/1 | Request Method : GET | 
+2026-05-09 15:02:44,706 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56790 - "GET /users/1 HTTP/1.1" 200
+2026-05-09 15:02:44,997 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 287.62270003790036ms | Request URL : http://127.0.0.1:8001/restaurants/ | Request Method : GET | 
+2026-05-09 15:02:44,997 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56791 - "GET /restaurants/ HTTP/1.1" 200
+2026-05-09 15:02:45,008 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.923599994275719ms | Request URL : http://127.0.0.1:8001/restaurants/1 | Request Method : GET | 
+2026-05-09 15:02:45,008 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56792 - "GET /restaurants/1 HTTP/1.1" 200
+2026-05-09 15:02:45,954 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 922.6605999865569ms | Request URL : http://127.0.0.1:8001/menu-items/ | Request Method : GET | 
+2026-05-09 15:02:45,955 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56793 - "GET /menu-items/ HTTP/1.1" 200
+2026-05-09 15:02:45,989 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.522800027392805ms | Request URL : http://127.0.0.1:8001/menu-items/1 | Request Method : GET | 
+2026-05-09 15:02:45,990 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65108 - "GET /menu-items/1 HTTP/1.1" 200
+2026-05-09 15:02:46,038 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 45.155600004363805ms | Request URL : http://127.0.0.1:8001/offers/ | Request Method : GET | 
+2026-05-09 15:02:46,039 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65109 - "GET /offers/ HTTP/1.1" 200
+2026-05-09 15:02:46,047 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 4.8248000093735754ms | Request URL : http://127.0.0.1:8001/offers/1 | Request Method : GET | 
+2026-05-09 15:02:46,048 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65110 - "GET /offers/1 HTTP/1.1" 200
+2026-05-09 15:02:50,916 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 4864.740199991502ms | Request URL : http://127.0.0.1:8001/orders/ | Request Method : GET | 
+2026-05-09 15:02:50,917 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:65111 - "GET /orders/ HTTP/1.1" 200
+2026-05-09 15:02:50,951 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 8.699600002728403ms | Request URL : http://127.0.0.1:8001/orders/1 | Request Method : GET | 
+2026-05-09 15:02:50,951 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58663 - "GET /orders/1 HTTP/1.1" 200
+2026-05-09 15:03:02,669 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 11714.459299982991ms | Request URL : http://127.0.0.1:8001/order-items/ | Request Method : GET | 
+2026-05-09 15:03:02,670 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:58664 - "GET /order-items/ HTTP/1.1" 200
+2026-05-09 15:03:02,714 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 10.897600033786148ms | Request URL : http://127.0.0.1:8001/order-items/1 | Request Method : GET | 
+2026-05-09 15:03:02,715 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62753 - "GET /order-items/1 HTTP/1.1" 200
+2026-05-09 15:03:02,999 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 278.963599994313ms | Request URL : http://127.0.0.1:8001/order-items/order/1 | Request Method : GET | 
+2026-05-09 15:03:03,000 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62754 - "GET /order-items/order/1 HTTP/1.1" 200
+2026-05-09 15:03:04,676 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1672.8848000057042ms | Request URL : http://127.0.0.1:8001/order-ratings/ | Request Method : GET | 
+2026-05-09 15:03:04,677 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62755 - "GET /order-ratings/ HTTP/1.1" 200
+2026-05-09 15:03:04,703 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.5269000004045665ms | Request URL : http://127.0.0.1:8001/order-ratings/1 | Request Method : GET | 
+2026-05-09 15:03:04,704 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52201 - "GET /order-ratings/1 HTTP/1.1" 200
+2026-05-09 15:03:05,973 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1242.7989999996498ms | Request URL : http://127.0.0.1:8001/user-addresses/ | Request Method : GET | 
+2026-05-09 15:03:05,973 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52202 - "GET /user-addresses/ HTTP/1.1" 200
+2026-05-09 15:03:06,002 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 6.104799977038056ms | Request URL : http://127.0.0.1:8001/user-addresses/1 | Request Method : GET | 
+2026-05-09 15:03:06,002 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52203 - "GET /user-addresses/1 HTTP/1.1" 200
+2026-05-09 15:03:06,012 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 5.775100027676672ms | Request URL : http://127.0.0.1:8001/user-addresses/user/1 | Request Method : GET | 
+2026-05-09 15:03:06,013 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53219 - "GET /user-addresses/user/1 HTTP/1.1" 200
+2026-05-09 15:03:06,019 | app | INFO | app\services\user_service.py:28 | Attempting to create user with email: test-5983bbe8@example.com
+2026-05-09 15:03:06,794 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53220 - "POST /users/ HTTP/1.1" 500
+2026-05-09 15:03:07,153 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 62.425300013273954ms | Request URL : http://127.0.0.1:8001/restaurants/ | Request Method : POST | 
+2026-05-09 15:03:07,154 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53222 - "POST /restaurants/ HTTP/1.1" 201
+2026-05-09 15:03:07,391 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 232.97939996700734ms | Request URL : http://127.0.0.1:8001/restaurants/2001 | Request Method : PUT | 
+2026-05-09 15:03:07,391 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53223 - "PUT /restaurants/2001 HTTP/1.1" 200
+2026-05-09 15:03:07,448 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 52.33179999049753ms | Request URL : http://127.0.0.1:8001/menu-items/ | Request Method : POST | 
+2026-05-09 15:03:07,448 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53224 - "POST /menu-items/ HTTP/1.1" 201
+2026-05-09 15:03:07,467 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 15.634500014130026ms | Request URL : http://127.0.0.1:8001/menu-items/20001 | Request Method : PUT | 
+2026-05-09 15:03:07,468 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53225 - "PUT /menu-items/20001 HTTP/1.1" 200
+2026-05-09 15:03:07,532 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 39.81949994340539ms | Request URL : http://127.0.0.1:8001/offers/ | Request Method : POST | 
+2026-05-09 15:03:07,536 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53226 - "POST /offers/ HTTP/1.1" 201
+2026-05-09 15:03:07,559 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 9.916499955579638ms | Request URL : http://127.0.0.1:8001/offers/101 | Request Method : PUT | 
+2026-05-09 15:03:07,568 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53227 - "PUT /offers/101 HTTP/1.1" 200
+2026-05-09 15:03:07,619 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 46.653500001411885ms | Request URL : http://127.0.0.1:8001/carts/ | Request Method : POST | 
+2026-05-09 15:03:07,620 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53228 - "POST /carts/ HTTP/1.1" 201
+2026-05-09 15:03:07,635 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 11.047400010284036ms | Request URL : http://127.0.0.1:8001/carts/1 | Request Method : PUT | 
+2026-05-09 15:03:07,635 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53229 - "PUT /carts/1 HTTP/1.1" 200
+2026-05-09 15:03:07,661 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 22.53079996444285ms | Request URL : http://127.0.0.1:8001/cart-items/ | Request Method : POST | 
+2026-05-09 15:03:07,661 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53230 - "POST /cart-items/ HTTP/1.1" 201
+2026-05-09 15:03:07,681 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 15.208400029223412ms | Request URL : http://127.0.0.1:8001/cart-items/1 | Request Method : PUT | 
+2026-05-09 15:03:07,682 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53231 - "PUT /cart-items/1 HTTP/1.1" 200
+2026-05-09 15:03:07,734 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 48.12059999676421ms | Request URL : http://127.0.0.1:8001/orders/ | Request Method : POST | 
+2026-05-09 15:03:07,734 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53232 - "POST /orders/ HTTP/1.1" 201
+2026-05-09 15:03:07,772 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 13.02770001348108ms | Request URL : http://127.0.0.1:8001/orders/100001 | Request Method : PATCH | 
+2026-05-09 15:03:07,772 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53233 - "PATCH /orders/100001 HTTP/1.1" 200
+2026-05-09 15:03:07,834 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 44.633999990765005ms | Request URL : http://127.0.0.1:8001/order-items/ | Request Method : POST | 
+2026-05-09 15:03:07,835 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53234 - "POST /order-items/ HTTP/1.1" 201
+2026-05-09 15:03:07,863 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 10.588100005406886ms | Request URL : http://127.0.0.1:8001/order-items/300035 | Request Method : PATCH | 
+2026-05-09 15:03:07,864 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53235 - "PATCH /order-items/300035 HTTP/1.1" 200
+2026-05-09 15:03:07,912 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 44.068000046536326ms | Request URL : http://127.0.0.1:8001/order-ratings/ | Request Method : POST | 
+2026-05-09 15:03:07,912 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53236 - "POST /order-ratings/ HTTP/1.1" 201
+2026-05-09 15:03:07,930 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 12.724899977911264ms | Request URL : http://127.0.0.1:8001/order-ratings/59798 | Request Method : PATCH | 
+2026-05-09 15:03:07,931 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53237 - "PATCH /order-ratings/59798 HTTP/1.1" 200
+2026-05-09 15:03:08,396 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53238 - "POST /user-addresses/ HTTP/1.1" 500
+2026-05-09 15:03:08,421 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53239 - "POST /user-addresses/ HTTP/1.1" 500
+2026-05-09 15:03:08,440 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.8233000240288675ms | Request URL : http://127.0.0.1:8001/order-ratings/59798 | Request Method : DELETE | 
+2026-05-09 15:03:08,440 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53240 - "DELETE /order-ratings/59798 HTTP/1.1" 204
+2026-05-09 15:03:08,452 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.914900023024529ms | Request URL : http://127.0.0.1:8001/order-items/300035 | Request Method : DELETE | 
+2026-05-09 15:03:08,452 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53241 - "DELETE /order-items/300035 HTTP/1.1" 204
+2026-05-09 15:03:08,463 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.790700008627027ms | Request URL : http://127.0.0.1:8001/orders/100001 | Request Method : DELETE | 
+2026-05-09 15:03:08,464 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53242 - "DELETE /orders/100001 HTTP/1.1" 204
+2026-05-09 15:03:08,474 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.253000047057867ms | Request URL : http://127.0.0.1:8001/cart-items/1 | Request Method : DELETE | 
+2026-05-09 15:03:08,475 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53243 - "DELETE /cart-items/1 HTTP/1.1" 204
+2026-05-09 15:03:08,486 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 8.117999997921288ms | Request URL : http://127.0.0.1:8001/carts/1 | Request Method : DELETE | 
+2026-05-09 15:03:08,487 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53244 - "DELETE /carts/1 HTTP/1.1" 204
+2026-05-09 15:03:08,497 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 6.897700019180775ms | Request URL : http://127.0.0.1:8001/offers/101 | Request Method : DELETE | 
+2026-05-09 15:03:08,497 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53245 - "DELETE /offers/101 HTTP/1.1" 204
+2026-05-09 15:03:08,510 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 8.892100013326854ms | Request URL : http://127.0.0.1:8001/menu-items/20001 | Request Method : DELETE | 
+2026-05-09 15:03:08,511 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53246 - "DELETE /menu-items/20001 HTTP/1.1" 204
+2026-05-09 15:03:08,523 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 7.89850001456216ms | Request URL : http://127.0.0.1:8001/restaurants/2001 | Request Method : DELETE | 
+2026-05-09 15:03:08,523 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53247 - "DELETE /restaurants/2001 HTTP/1.1" 204
+2026-05-10 06:09:19,029 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-10 06:09:19,193 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-10 06:09:19,226 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-10 06:09:19,232 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [54620]
+2026-05-10 06:09:30,238 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-10 06:09:30,241 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [34188]
+2026-05-10 06:09:30,242 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-10 06:09:30,246 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-10 06:09:30,428 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:272 | Shutting down
+2026-05-10 06:09:30,637 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:67 | Waiting for application shutdown.
+2026-05-10 06:09:30,674 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:76 | Application shutdown complete.
+2026-05-10 06:09:30,682 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:102 | Finished server process [45932]
+2026-05-10 06:09:43,611 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-10 06:09:43,614 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [48916]
+2026-05-10 06:09:43,615 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-10 06:09:43,616 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-10 07:51:33,410 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-10 07:51:33,427 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [51880]
+2026-05-10 07:51:33,435 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-10 07:51:33,438 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-10 07:51:33,441 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:224 | Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+2026-05-10 07:51:33,666 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 47.06999997142702ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-10 07:51:33,667 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:62068 - "GET /health HTTP/1.1" 200
+2026-05-10 07:51:35,810 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 2.311200019903481ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-10 07:51:35,810 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52786 - "GET /health HTTP/1.1" 200
+2026-05-10 07:51:35,839 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 1
+2026-05-10 07:51:36,261 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 438.82260005921125ms | Request URL : http://127.0.0.1:8001/users/1 | Request Method : GET | 
+2026-05-10 07:51:36,262 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:52787 - "GET /users/1 HTTP/1.1" 200
+2026-05-10 07:51:36,316 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 52.34309996012598ms | Request URL : http://127.0.0.1:8001/user-addresses/1 | Request Method : GET | 
+2026-05-10 07:51:36,320 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53031 - "GET /user-addresses/1 HTTP/1.1" 200
+2026-05-10 07:51:36,327 | app | INFO | app\services\user_service.py:28 | Attempting to create user with email: test-90c96a56@example.com
+2026-05-10 07:51:36,895 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 569.4910000311211ms | Request URL : http://127.0.0.1:8001/users/ | Request Method : POST | 
+2026-05-10 07:51:36,895 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:53319 - "POST /users/ HTTP/1.1" 201
+2026-05-10 07:51:36,917 | app | INFO | app\services\user_service.py:44 | Updating user with ID: 20001
+2026-05-10 07:51:36,919 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 20001
+2026-05-10 07:51:36,998 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 83.73750001192093ms | Request URL : http://127.0.0.1:8001/users/20001 | Request Method : PUT | 
+2026-05-10 07:51:37,000 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50868 - "PUT /users/20001 HTTP/1.1" 200
+2026-05-10 07:51:37,740 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50869 - "POST /user-addresses/ HTTP/1.1" 500
+2026-05-10 07:51:38,007 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 20001
+2026-05-10 07:51:38,014 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 9.958600043319166ms | Request URL : http://127.0.0.1:8001/users/20001 | Request Method : DELETE | 
+2026-05-10 07:51:38,016 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50870 - "DELETE /users/20001 HTTP/1.1" 204
+2026-05-10 08:13:07,568 | app | INFO | app\core\bootstrap.py:34 | -----------------Bootstrapping FastAPI-----------------
+2026-05-10 08:13:07,569 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:92 | Started server process [29464]
+2026-05-10 08:13:07,571 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:48 | Waiting for application startup.
+2026-05-10 08:13:07,571 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\lifespan\on.py:62 | Application startup complete.
+2026-05-10 08:13:07,573 | uvicorn.error | INFO | .venv\Lib\site-packages\uvicorn\server.py:224 | Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+2026-05-10 08:13:07,681 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 6.360300001688302ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-10 08:13:07,682 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:56672 - "GET /health HTTP/1.1" 200
+2026-05-10 08:13:08,618 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 1.2167999520897865ms | Request URL : http://127.0.0.1:8001/health | Request Method : GET | 
+2026-05-10 08:13:08,618 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50575 - "GET /health HTTP/1.1" 200
+2026-05-10 08:13:08,642 | app | INFO | app\services\user_service.py:28 | Attempting to create user with email: test-d7c4b1aa@example.com
+2026-05-10 08:13:09,433 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 795.8408000413328ms | Request URL : http://127.0.0.1:8001/users/ | Request Method : POST | 
+2026-05-10 08:13:09,488 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:50576 - "POST /users/ HTTP/1.1" 201
+2026-05-10 08:13:09,543 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 50.747100031003356ms | Request URL : http://127.0.0.1:8001/user-addresses/ | Request Method : POST | 
+2026-05-10 08:13:09,543 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59311 - "POST /user-addresses/ HTTP/1.1" 201
+2026-05-10 08:13:09,583 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 36.16780007723719ms | Request URL : http://127.0.0.1:8001/user-addresses/30041 | Request Method : PATCH | 
+2026-05-10 08:13:09,583 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59312 - "PATCH /user-addresses/30041 HTTP/1.1" 200
+2026-05-10 08:13:09,594 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 6.832499988377094ms | Request URL : http://127.0.0.1:8001/user-addresses/30041 | Request Method : DELETE | 
+2026-05-10 08:13:09,594 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59313 - "DELETE /user-addresses/30041 HTTP/1.1" 204
+2026-05-10 08:13:09,611 | app | INFO | app\services\user_service.py:19 | Fetching user details for ID: 20002
+2026-05-10 08:13:09,620 | app.core.middleware.request_logger | INFO | app\core\middleware\request_logger.py:15 | Request duration : 10.201899916864932ms | Request URL : http://127.0.0.1:8001/users/20002 | Request Method : DELETE | 
+2026-05-10 08:13:09,622 | uvicorn.access | INFO | .venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py:482 | 127.0.0.1:59314 - "DELETE /users/20002 HTTP/1.1" 204

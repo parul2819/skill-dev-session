@@ -2,7 +2,7 @@ from datetime import date, datetime
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from app.common.enums import DiscountTypeEnum
+from app.utils.enums import DiscountTypeEnum
 
 
 class OfferCreate(BaseModel):

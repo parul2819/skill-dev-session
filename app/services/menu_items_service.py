@@ -1,9 +1,10 @@
-from fastapi import HTTPException, status
-
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException
 from app.dto import MenuItemCreate, MenuItemUpdate
 from app.orm import MenuItemOrm
 from app.repositories import MenuItemRepository
 
+logger = setup_logger()
 
 class MenuItemService:
     def __init__(self, repo: MenuItemRepository) -> None:
@@ -15,7 +16,8 @@ class MenuItemService:
     async def get_menu_item(self, item_id: int) -> MenuItemOrm:
         item = await self.repo.get_by_id(item_id)
         if not item:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Menu item not found")
+            logger.error(f"Menu item not found with ID: {item_id}")
+            raise NotFoundException(message="Menu item not found")
         return item
 
     async def create_menu_item(self, payload: MenuItemCreate) -> MenuItemOrm:

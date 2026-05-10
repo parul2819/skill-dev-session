@@ -1,9 +1,10 @@
-from fastapi import HTTPException, status
-
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException
 from app.dto import CartItemCreate, CartItemUpdate
 from app.orm import CartItemOrm
 from app.repositories import CartItemRepository
 
+logger = setup_logger()
 
 class CartItemService:
     def __init__(self, repo: CartItemRepository) -> None:
@@ -12,10 +13,11 @@ class CartItemService:
     async def list_cart_items(self) -> list[CartItemOrm]:
         return await self.repo.list_active()
 
-    async def get_cart_item(self, item_id: int) -> CartItemOrm:
-        item = await self.repo.get_by_id(item_id)
+    async def get_cart_item(self, cart_item_id: int) -> CartItemOrm:
+        item = await self.repo.get_by_id(cart_item_id)
         if not item:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Cart item not found")
+            logger.error(f"Cart item not found with ID: {cart_item_id}")
+            raise NotFoundException(message="Cart item not found")
         return item
 
     async def create_cart_item(self, payload: CartItemCreate) -> CartItemOrm:
@@ -27,8 +29,8 @@ class CartItemService:
         )
         return await self.repo.create(item)
 
-    async def update_cart_item(self, item_id: int, payload: CartItemUpdate) -> CartItemOrm:
-        item = await self.get_cart_item(item_id)
+    async def update_cart_item(self, cart_item_id: int, payload: CartItemUpdate) -> CartItemOrm:
+        item = await self.get_cart_item(cart_item_id)
 
         update_data = payload.model_dump(exclude_unset=True)
         for key, value in update_data.items():
@@ -36,6 +38,6 @@ class CartItemService:
 
         return await self.repo.update(item)
 
-    async def delete_cart_item(self, item_id: int) -> None:
-        item = await self.get_cart_item(item_id)
+    async def delete_cart_item(self, cart_item_id: int) -> None:
+        item = await self.get_cart_item(cart_item_id)
         await self.repo.soft_delete(item)

@@ -1,11 +1,12 @@
-from sqlalchemy import Boolean, Enum, Integer, Numeric, String, Text, Date, TIMESTAMP, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import Boolean, Enum, Integer, Numeric, String, Text, Date
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.common.enums import DiscountTypeEnum
+from app.utils.enums import DiscountTypeEnum
 from app.core.db.base import Base
+from app.orm.base import AuditMixin
 
 
-class OfferOrm(Base):
+class OfferOrm(Base, AuditMixin):
     __tablename__ = "offers"
 
     offer_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -21,8 +22,6 @@ class OfferOrm(Base):
     valid_from: Mapped[str | None] = mapped_column(Date, nullable=True)
     valid_to: Mapped[str | None] = mapped_column(Date, nullable=True)
     is_active: Mapped[bool | None] = mapped_column(Boolean, nullable=True)
-    created_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    updated_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    created_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    updated_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    orders = relationship("OrderOrm", back_populates="offer")
+    

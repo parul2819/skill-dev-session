@@ -1,10 +1,12 @@
-from sqlalchemy import Boolean, Integer, String, TIMESTAMP, func
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import relationship
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.core.db.base import Base
+from app.orm.base import AuditMixin
 
 
-class UserOrm(Base):
+class UserOrm(Base, AuditMixin):
     __tablename__ = "users"
 
     user_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -13,9 +15,8 @@ class UserOrm(Base):
     password: Mapped[str] = mapped_column(String(255), nullable=False)
     phone_number: Mapped[str | None] = mapped_column(String(15), nullable=True)
     bio: Mapped[str | None] = mapped_column(String(500), nullable=True) #new column
-    created_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    updated_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    created_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    updated_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
-    is_active: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    addresses = relationship("UserAddressOrm", back_populates="user")
+    carts = relationship("CartOrm", back_populates="user")
+    orders = relationship("OrderOrm", back_populates="user")
+    ratings = relationship("OrderRatingOrm", back_populates="user")

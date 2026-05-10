@@ -1,8 +1,10 @@
-from fastapi import HTTPException, status
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException, ConflictException
 from app.dto import OrderRatingCreate, OrderRatingUpdate
 from app.orm import OrderRatingOrm
 from app.repositories import OrderRatingRepository
 
+logger = setup_logger()
 
 class OrderRatingService:
     def __init__(self, repo: OrderRatingRepository) -> None:
@@ -14,14 +16,16 @@ class OrderRatingService:
     async def get_rating(self, rating_id: int) -> OrderRatingOrm:
         rating = await self.repo.get_by_id(rating_id)
         if not rating:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Rating not found")
+            logger.error(f"Rating not found with ID: {rating_id}")
+            raise NotFoundException(message="Rating not found")
         return rating
 
     async def create_rating(self, payload: OrderRatingCreate) -> OrderRatingOrm:
         # Check if rating already exists for the order
         existing = await self.repo.get_by_order_id(payload.order_id)
         if existing:
-            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Rating already exists for this order")
+            logger.error(f"Rating already exists for order ID: {payload.order_id}")
+            raise ConflictException(message="Rating already exists for this order")
 
         order_rating = OrderRatingOrm(
             order_id=payload.order_id,

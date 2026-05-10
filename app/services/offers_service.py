@@ -1,9 +1,10 @@
-from fastapi import HTTPException, status
-
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException, ConflictException
 from app.dto import OfferCreate, OfferUpdate
 from app.orm import OfferOrm
 from app.repositories import OfferRepository
 
+logger = setup_logger()
 
 class OfferService:
     def __init__(self, repo: OfferRepository) -> None:
@@ -15,13 +16,15 @@ class OfferService:
     async def get_offer(self, offer_id: int) -> OfferOrm:
         offer = await self.repo.get_by_id(offer_id)
         if not offer:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Offer not found")
+            logger.error(f"Offer not found with ID: {offer_id}")
+            raise NotFoundException(message="Offer not found")
         return offer
 
     async def create_offer(self, payload: OfferCreate) -> OfferOrm:
         existing = await self.repo.get_by_code(payload.code)
         if existing:
-            raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Offer code already exists")
+            logger.error(f"Offer code conflict: {payload.code} already exists")
+            raise ConflictException(message="Offer code already exists")
 
         offer = OfferOrm(
             code=payload.code,
@@ -42,7 +45,8 @@ class OfferService:
         if payload.code and payload.code != offer.code:
             existing = await self.repo.get_by_code(payload.code)
             if existing:
-                raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Offer code already exists")
+                logger.error(f"Offer code conflict on update: {payload.code} already exists")
+                raise ConflictException(message="Offer code already exists")
 
         update_data = payload.model_dump(exclude_unset=True)
         for key, value in update_data.items():

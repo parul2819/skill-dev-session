@@ -19,9 +19,9 @@ async def list_cart_items(service: CartItemService = Depends(get_cart_item_servi
     return await service.list_cart_items()
 
 
-@router.get("/{item_id}", response_model=CartItemRead)
-async def get_cart_item(item_id: int, service: CartItemService = Depends(get_cart_item_service)) -> Any:
-    return await service.get_cart_item(item_id)
+@router.get("/{cart_item_id}", response_model=CartItemRead)
+async def get_cart_item(cart_item_id: int, service: CartItemService = Depends(get_cart_item_service)) -> Any:
+    return await service.get_cart_item(cart_item_id)
 
 
 @router.post("/", response_model=CartItemRead, status_code=status.HTTP_201_CREATED)
@@ -29,16 +29,16 @@ async def create_cart_item(payload: CartItemCreate, service: CartItemService = D
     return await service.create_cart_item(payload)
 
 
-@router.put("/{item_id}", response_model=CartItemRead)
+@router.put("/{cart_item_id}", response_model=CartItemRead)
 async def update_cart_item(
-    item_id: int,
+    cart_item_id: int,
     payload: CartItemUpdate,
     service: CartItemService = Depends(get_cart_item_service),
 ) -> Any:
-    return await service.update_cart_item(item_id, payload)
+    return await service.update_cart_item(cart_item_id, payload)
 
 
-@router.delete("/{item_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_cart_item(item_id: int, service: CartItemService = Depends(get_cart_item_service)) -> None:
-    await service.delete_cart_item(item_id)
+@router.delete("/{cart_item_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_cart_item(cart_item_id: int, service: CartItemService = Depends(get_cart_item_service)) -> None:
+    await service.delete_cart_item(cart_item_id)
     # return Response(status_code=status.HTTP_204_NO_CONTENT)

@@ -1,8 +1,10 @@
+from app.core.logger import setup_logger
 from app.core.exceptions.custom_exceptions import NotFoundException
 from app.dto import RestaurantCreate, RestaurantUpdate
 from app.orm import RestaurantOrm
 from app.repositories import RestaurantRepository
 
+logger = setup_logger()
 
 class RestaurantService:
     def __init__(self, repo: RestaurantRepository) -> None:
@@ -14,7 +16,8 @@ class RestaurantService:
     async def get_restaurant(self, restaurant_id: int) -> RestaurantOrm:
         restaurant = await self.repo.get_by_id(restaurant_id)
         if not restaurant:
-            raise NotFoundException()
+            logger.error(f"Restaurant not found with ID: {restaurant_id}")
+            raise NotFoundException(message="Restaurant not found")
         return restaurant
 
     async def create_restaurant(self, payload: RestaurantCreate) -> RestaurantOrm:

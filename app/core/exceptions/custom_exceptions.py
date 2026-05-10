@@ -21,3 +21,7 @@ class BadRequestException(AppException):
 class InternalServerErrorException(AppException):
     def __init__(self, message: str = None, status_code: int = 500, details: str = None):
         super().__init__(status_code=status_code, error_code=ErrorCode.INTERNAL_SERVER_ERROR, message=message, details=details)
+
+class ConflictException(AppException):
+    def __init__(self, message: str = None, status_code: int = 409, details: str = None):
+        super().__init__(status_code=status_code, error_code=ErrorCode.CONFLICT, message=message, details=details)

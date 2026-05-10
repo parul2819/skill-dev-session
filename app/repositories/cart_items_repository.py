@@ -13,9 +13,9 @@ class CartItemRepository:
         result = await self.db.scalars(stmt)
         return list(result.all())
 
-    async def get_by_id(self, item_id: int) -> CartItemOrm | None:
+    async def get_by_id(self, cart_item_id: int) -> CartItemOrm | None:
         stmt = select(CartItemOrm).where(
-            CartItemOrm.item_id == item_id,
+            CartItemOrm.cart_item_id == cart_item_id,
             CartItemOrm.is_deleted.is_(False),
         )
         result = await self.db.scalars(stmt)

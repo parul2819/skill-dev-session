@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, ConfigDict
 
-from app.common.enums import RestaurantStatusEnum
+from app.utils.enums import RestaurantStatusEnum
 
 
 class RestaurantCreate(BaseModel):

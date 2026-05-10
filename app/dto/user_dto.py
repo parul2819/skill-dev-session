@@ -8,6 +8,7 @@ class UserCreate(BaseModel):
     email: str
     password: str
     phone_number: str | None = None
+    bio: str | None = None
 
 
 class UserUpdate(BaseModel):
@@ -15,6 +16,7 @@ class UserUpdate(BaseModel):
     email: str | None = None
     password: str | None = None
     phone_number: str | None = None
+    bio: str | None = None
 
 
 class UserRead(BaseModel):
@@ -24,6 +26,7 @@ class UserRead(BaseModel):
     name: str
     email: str
     phone_number: str | None
+    bio: str | None
     created_at: datetime
     updated_at: datetime
     created_by: int | None

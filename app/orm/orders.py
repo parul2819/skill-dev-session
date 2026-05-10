@@ -1,11 +1,12 @@
-from sqlalchemy import Boolean, Enum, ForeignKey, Integer, Numeric, TIMESTAMP, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import Enum, ForeignKey, Integer, Numeric
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
-from app.common.enums import OrderStatusEnum
+from app.utils.enums import OrderStatusEnum
 from app.core.db.base import Base
+from app.orm.base import AuditMixin
 
 
-class OrderOrm(Base):
+class OrderOrm(Base, AuditMixin):
     __tablename__ = "orders"
 
     order_id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
@@ -20,8 +21,9 @@ class OrderOrm(Base):
         default=OrderStatusEnum.pending,
         nullable=False,
     )
-    created_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    updated_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    created_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    updated_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    user = relationship("UserOrm", back_populates="orders")
+    restaurant = relationship("RestaurantOrm", back_populates="orders")
+    offer = relationship("OfferOrm", back_populates="orders")
+    items = relationship("OrderItemOrm", back_populates="order")
+    rating = relationship("OrderRatingOrm", back_populates="order", uselist=False)

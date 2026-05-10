@@ -1,10 +1,11 @@
-from sqlalchemy import Boolean, CheckConstraint, ForeignKey, Integer, Text, TIMESTAMP, UniqueConstraint, func
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import CheckConstraint, ForeignKey, Integer, Text, UniqueConstraint
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.db.base import Base
+from app.orm.base import AuditMixin
 
 
-class OrderRatingOrm(Base):
+class OrderRatingOrm(Base, AuditMixin):
     __tablename__ = "order_ratings"
     __table_args__ = (
         UniqueConstraint("order_id", name="order_ratings_order_id_key"),
@@ -17,8 +18,7 @@ class OrderRatingOrm(Base):
     restaurant_id: Mapped[int] = mapped_column(ForeignKey("restaurants.restaurant_id"), nullable=False)
     rating: Mapped[int | None] = mapped_column(Integer, nullable=True)
     review: Mapped[str | None] = mapped_column(Text, nullable=True)
-    created_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    updated_at: Mapped[str] = mapped_column(TIMESTAMP(timezone=True), server_default=func.now())
-    created_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    updated_by: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    is_deleted: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+
+    order = relationship("OrderOrm", back_populates="rating")
+    user = relationship("UserOrm", back_populates="ratings")
+    restaurant = relationship("RestaurantOrm", back_populates="ratings")

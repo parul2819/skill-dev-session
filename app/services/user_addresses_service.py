@@ -1,8 +1,10 @@
-from fastapi import HTTPException, status
+from app.core.logger import setup_logger
+from app.core.exceptions.custom_exceptions import NotFoundException
 from app.dto import UserAddressCreate, UserAddressUpdate
 from app.orm import UserAddressOrm
 from app.repositories import UserAddressRepository
 
+logger = setup_logger()
 
 class UserAddressService:
     def __init__(self, repo: UserAddressRepository) -> None:
@@ -14,7 +16,8 @@ class UserAddressService:
     async def get_address(self, address_id: int) -> UserAddressOrm:
         address = await self.repo.get_by_id(address_id)
         if not address:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Address not found")
+            logger.error(f"Address not found with ID: {address_id}")
+            raise NotFoundException(message="Address not found")
         return address
 
     async def list_user_addresses(self, user_id: int) -> list[UserAddressOrm]:
@@ -24,7 +27,7 @@ class UserAddressService:
         if payload.is_default:
             await self.repo.reset_default_for_user(payload.user_id)
 
-        user_address = UserAddress(
+        user_address = UserAddressOrm(
             user_id=payload.user_id,
             address_line=payload.address_line,
             city=payload.city,

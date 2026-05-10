@@ -1,6 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
-from app.common.enums import OrderStatusEnum
+from app.utils.enums import OrderStatusEnum
 
 
 class OrderCreate(BaseModel):
